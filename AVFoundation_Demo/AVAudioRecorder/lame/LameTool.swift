@@ -9,10 +9,11 @@
 import Foundation
 
 class LameTool {
-	func audioToMP3(path: String, isDeleteSourceFile: Bool = true) -> String {
+	func audioToMP3(path: String, newPath: String, isDeleteSourceFile: Bool = true) -> String {
 		guard FileManager.default.fileExists(atPath: path) else {
 			print("Lame transform format .源文件不存在")
 			return ""
 		}
+		return ""
 	}
 }

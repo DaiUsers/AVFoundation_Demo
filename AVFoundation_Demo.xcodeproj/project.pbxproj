@@ -12,6 +12,12 @@
 		7A189881225AE5FB00A72AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A18987F225AE5FB00A72AFF /* Main.storyboard */; };
 		7A189883225AE5FE00A72AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A189882225AE5FE00A72AFF /* Assets.xcassets */; };
 		7A189886225AE5FE00A72AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A189884225AE5FE00A72AFF /* LaunchScreen.storyboard */; };
+		7A18988F225AE85700A72AFF /* AudioRecorderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18988E225AE85700A72AFF /* AudioRecorderController.swift */; };
+		7A189892225AED3700A72AFF /* YTSandboxPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A189891225AED3700A72AFF /* YTSandboxPath.swift */; };
+		7A189894225AEE1A00A72AFF /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A189893225AEE1A00A72AFF /* AudioRecorder.swift */; };
+		7A189898225AF3CF00A72AFF /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A189896225AF3CE00A72AFF /* libmp3lame.a */; };
+		7A18989A225AF45700A72AFF /* LameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A189899225AF45700A72AFF /* LameTool.swift */; };
+		7A18989D225B1E1E00A72AFF /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18989C225B1E1E00A72AFF /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,13 @@
 		7A189882225AE5FE00A72AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A189885225AE5FE00A72AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A189887225AE5FE00A72AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A18988E225AE85700A72AFF /* AudioRecorderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderController.swift; sourceTree = "<group>"; };
+		7A189891225AED3700A72AFF /* YTSandboxPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTSandboxPath.swift; sourceTree = "<group>"; };
+		7A189893225AEE1A00A72AFF /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		7A189896225AF3CE00A72AFF /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		7A189897225AF3CE00A72AFF /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		7A189899225AF45700A72AFF /* LameTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LameTool.swift; sourceTree = "<group>"; };
+		7A18989C225B1E1E00A72AFF /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A189898225AF3CF00A72AFF /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +68,53 @@
 		7A18987A225AE5FB00A72AFF /* AVFoundation_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7A18989B225AFCED00A72AFF /* AVAudioPlayer */,
+				7A18988D225AE64400A72AFF /* AVAudioRecorder */,
 				7A18987B225AE5FB00A72AFF /* AppDelegate.swift */,
 				7A18987D225AE5FB00A72AFF /* ViewController.swift */,
+				7A189890225AED3700A72AFF /* YTSandbox */,
 				7A18987F225AE5FB00A72AFF /* Main.storyboard */,
 				7A189882225AE5FE00A72AFF /* Assets.xcassets */,
 				7A189884225AE5FE00A72AFF /* LaunchScreen.storyboard */,
 				7A189887225AE5FE00A72AFF /* Info.plist */,
 			);
 			path = AVFoundation_Demo;
+			sourceTree = "<group>";
+		};
+		7A18988D225AE64400A72AFF /* AVAudioRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				7A189895225AF3CE00A72AFF /* lame */,
+				7A18988E225AE85700A72AFF /* AudioRecorderController.swift */,
+				7A189893225AEE1A00A72AFF /* AudioRecorder.swift */,
+			);
+			path = AVAudioRecorder;
+			sourceTree = "<group>";
+		};
+		7A189890225AED3700A72AFF /* YTSandbox */ = {
+			isa = PBXGroup;
+			children = (
+				7A189891225AED3700A72AFF /* YTSandboxPath.swift */,
+			);
+			path = YTSandbox;
+			sourceTree = "<group>";
+		};
+		7A189895225AF3CE00A72AFF /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				7A189899225AF45700A72AFF /* LameTool.swift */,
+				7A189897225AF3CE00A72AFF /* lame.h */,
+				7A189896225AF3CE00A72AFF /* libmp3lame.a */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
+		7A18989B225AFCED00A72AFF /* AVAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7A18989C225B1E1E00A72AFF /* AudioPlayer.swift */,
+			);
+			path = AVAudioPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A18987E225AE5FB00A72AFF /* ViewController.swift in Sources */,
+				7A18988F225AE85700A72AFF /* AudioRecorderController.swift in Sources */,
+				7A18989A225AF45700A72AFF /* LameTool.swift in Sources */,
 				7A18987C225AE5FB00A72AFF /* AppDelegate.swift in Sources */,
+				7A189892225AED3700A72AFF /* YTSandboxPath.swift in Sources */,
+				7A189894225AEE1A00A72AFF /* AudioRecorder.swift in Sources */,
+				7A18989D225B1E1E00A72AFF /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,14 +343,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNWZA9N69A;
 				INFOPLIST_FILE = AVFoundation_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AVFoundation_Demo/AVAudioRecorder/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wheng.AVFoundation-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,14 +366,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNWZA9N69A;
 				INFOPLIST_FILE = AVFoundation_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AVFoundation_Demo/AVAudioRecorder/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wheng.AVFoundation-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
