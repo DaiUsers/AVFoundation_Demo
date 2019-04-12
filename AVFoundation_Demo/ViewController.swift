@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	let dataSource: [String] = ["AVAudioRecorder 录音功能"]
+	let dataSource: [String] = ["AVAudioRecorder 录音功能", "AVPlayer 视频播放"]
 
 	let Identify = "AVFoundationI"
 
@@ -42,7 +42,12 @@ extension ViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		self.navigationController?.pushViewController(AudioRecorderController(), animated: true)
+		if indexPath.row == 0 {
+			self.navigationController?.pushViewController(AudioRecorderController(), animated: true)
+		} else if indexPath.row == 1 {
+			self.navigationController?.pushViewController(AVPlayerViewController(), animated: true)
+		}
+
 	}
 }
 
@@ -57,3 +62,6 @@ extension ViewController: UITableViewDataSource {
 		return dataSource.count
 	}
 }
+
+
+

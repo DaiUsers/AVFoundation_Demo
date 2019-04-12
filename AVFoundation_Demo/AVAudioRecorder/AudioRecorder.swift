@@ -24,12 +24,12 @@ class AudioRecorder {
 		let url = URL.init(fileURLWithPath: audioPath!)
 
 
-		let recorderConfig = [AVFormatIDKey: kAudioFormatLinearPCM,	// 录音格式
-							  AVSampleRateKey: 11025.0,		//采样率
-							  AVNumberOfChannelsKey: 1,		//设置通道(2双声道)
-							  AVLinearPCMBitDepthKey: 8,	//每个采样点位数
-							  AVLinearPCMIsFloatKey: true,	//使用浮点数采样
-							  AVEncoderAudioQualityKey: AVAudioQuality.min] as [String : Any]
+		let recorderConfig = [AVFormatIDKey: NSNumber.init(value: kAudioFormatLinearPCM),	// 录音格式
+							  AVSampleRateKey: NSNumber.init(value: 11025.0),		//采样率
+							  AVNumberOfChannelsKey: NSNumber.init(value: 1),		//设置通道(2双声道)
+							  AVLinearPCMBitDepthKey: NSNumber.init(value: 8),	//每个采样点位数
+							  AVLinearPCMIsFloatKey: NSNumber.init(value: true),	//使用浮点数采样
+							  AVEncoderAudioQualityKey: NSNumber.init(value: AVAudioQuality.min.rawValue)] as [String : Any]
 
 		do {
 			recorder = try AVAudioRecorder.init(url: url, settings: recorderConfig)

@@ -18,6 +18,12 @@
 		7A189898225AF3CF00A72AFF /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A189896225AF3CE00A72AFF /* libmp3lame.a */; };
 		7A18989A225AF45700A72AFF /* LameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A189899225AF45700A72AFF /* LameTool.swift */; };
 		7A18989D225B1E1E00A72AFF /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18989C225B1E1E00A72AFF /* AudioPlayer.swift */; };
+		7A1898A4225B354700A72AFF /* SSAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1898A3225B354700A72AFF /* SSAVPlayer.swift */; };
+		7A1898A6225B355400A72AFF /* SSAVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1898A5225B355400A72AFF /* SSAVPlayerItem.swift */; };
+		7A1898A8225B356400A72AFF /* SSAVPlayerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1898A7225B356400A72AFF /* SSAVPlayerControl.swift */; };
+		7A1898AA225B357000A72AFF /* SSAVPlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1898A9225B357000A72AFF /* SSAVPlayerControlView.swift */; };
+		7A1898AD225D9D6B00A72AFF /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1898AC225D9D6B00A72AFF /* AVPlayerViewController.swift */; };
+		7A1898B32260256F00A72AFF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1898B22260256F00A72AFF /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,13 @@
 		7A189897225AF3CE00A72AFF /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		7A189899225AF45700A72AFF /* LameTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LameTool.swift; sourceTree = "<group>"; };
 		7A18989C225B1E1E00A72AFF /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		7A1898A3225B354700A72AFF /* SSAVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAVPlayer.swift; sourceTree = "<group>"; };
+		7A1898A5225B355400A72AFF /* SSAVPlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAVPlayerItem.swift; sourceTree = "<group>"; };
+		7A1898A7225B356400A72AFF /* SSAVPlayerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAVPlayerControl.swift; sourceTree = "<group>"; };
+		7A1898A9225B357000A72AFF /* SSAVPlayerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAVPlayerControlView.swift; sourceTree = "<group>"; };
+		7A1898AC225D9D6B00A72AFF /* AVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
+		7A1898B0225DA16400A72AFF /* 101.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 101.mp4; sourceTree = "<group>"; };
+		7A1898B22260256F00A72AFF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1898B32260256F00A72AFF /* AVFoundation.framework in Frameworks */,
 				7A189898225AF3CF00A72AFF /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +68,7 @@
 			children = (
 				7A18987A225AE5FB00A72AFF /* AVFoundation_Demo */,
 				7A189879225AE5FB00A72AFF /* Products */,
+				7A1898B12260256F00A72AFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +83,7 @@
 		7A18987A225AE5FB00A72AFF /* AVFoundation_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7A18989E225B34AB00A72AFF /* AVPlayer */,
 				7A18989B225AFCED00A72AFF /* AVAudioPlayer */,
 				7A18988D225AE64400A72AFF /* AVAudioRecorder */,
 				7A18987B225AE5FB00A72AFF /* AppDelegate.swift */,
@@ -115,6 +131,59 @@
 				7A18989C225B1E1E00A72AFF /* AudioPlayer.swift */,
 			);
 			path = AVAudioPlayer;
+			sourceTree = "<group>";
+		};
+		7A18989E225B34AB00A72AFF /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7A1898AC225D9D6B00A72AFF /* AVPlayerViewController.swift */,
+				7A1898B0225DA16400A72AFF /* 101.mp4 */,
+				7A1898A1225B351500A72AFF /* Control */,
+				7A1898A0225B351500A72AFF /* Item */,
+				7A1898A2225B351500A72AFF /* Player */,
+				7A18989F225B351500A72AFF /* View */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		7A18989F225B351500A72AFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A1898A9225B357000A72AFF /* SSAVPlayerControlView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A1898A0225B351500A72AFF /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				7A1898A5225B355400A72AFF /* SSAVPlayerItem.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		7A1898A1225B351500A72AFF /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				7A1898A7225B356400A72AFF /* SSAVPlayerControl.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		7A1898A2225B351500A72AFF /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				7A1898A3225B354700A72AFF /* SSAVPlayer.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		7A1898B12260256F00A72AFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A1898B22260256F00A72AFF /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,11 +258,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A18987E225AE5FB00A72AFF /* ViewController.swift in Sources */,
+				7A1898A8225B356400A72AFF /* SSAVPlayerControl.swift in Sources */,
+				7A1898AA225B357000A72AFF /* SSAVPlayerControlView.swift in Sources */,
 				7A18988F225AE85700A72AFF /* AudioRecorderController.swift in Sources */,
+				7A1898A6225B355400A72AFF /* SSAVPlayerItem.swift in Sources */,
 				7A18989A225AF45700A72AFF /* LameTool.swift in Sources */,
 				7A18987C225AE5FB00A72AFF /* AppDelegate.swift in Sources */,
 				7A189892225AED3700A72AFF /* YTSandboxPath.swift in Sources */,
+				7A1898A4225B354700A72AFF /* SSAVPlayer.swift in Sources */,
 				7A189894225AEE1A00A72AFF /* AudioRecorder.swift in Sources */,
+				7A1898AD225D9D6B00A72AFF /* AVPlayerViewController.swift in Sources */,
 				7A18989D225B1E1E00A72AFF /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

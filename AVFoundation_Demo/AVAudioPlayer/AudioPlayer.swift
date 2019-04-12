@@ -21,13 +21,13 @@ class AudioPlayer: NSObject {
 			print(err.localizedDescription)
 		}
 
-		/// 不循环
-		audioPlayer.numberOfLoops = 0
 		audioPlayer.delegate = self
 		audioPlayer.prepareToPlay()
 	}
 
 	open func play() {
+		print(audioPlayer.duration)
+		
 		if !audioPlayer.isPlaying {
 			audioPlayer.play()
 		}
